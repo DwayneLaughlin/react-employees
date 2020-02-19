@@ -1,9 +1,8 @@
 import React from "react";
 
-
-function Employees (props) {
+class Employees extends React.Component {
+  render() {
     return (
-      
       <table className="table-style">
         <thead>
           <tr className="table-row">
@@ -22,20 +21,18 @@ function Employees (props) {
           </tr>
         </thead>
         <tbody>
-          {
-            props.employees.map(row => (
-              <tr>
-                <td >{row.first_name}</td>
-                <td >{row.last_name}</td>
-                <td >{row.title}</td>
-                <td >{row.salary}</td>
-              </tr>
-              
-            ))
-          }
+          {this.props.employees.map(row => (
+            <tr>
+              <td>{row.first_name}</td>
+              <td>{row.last_name}</td>
+              <td>{row.title}</td>
+              <td>{row.salary}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-    )};
-  
+    );
+  }
+}
 
 export default Employees;
