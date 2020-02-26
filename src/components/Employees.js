@@ -1,7 +1,9 @@
 import React from "react";
 
-class Employees extends React.Component {
-  render() {
+
+function Employees() {
+  
+
     return (
       <table className="table-style">
         <thead>
@@ -33,6 +35,6 @@ class Employees extends React.Component {
       </table>
     );
   }
-}
+
 
 export default Employees;

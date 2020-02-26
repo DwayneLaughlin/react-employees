@@ -1,43 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-import Employees from "./components/Employees"
+import employees from "./employees.json";
 
+class App extends Component {
+  state = {
+    employees
+  };
 
-const employees = [
-  {
-      first_name : "Bill",
-      last_name : "Evans",
-      title : "Phone Rep",
-      salary : "25,000"
-
-  },
-  {
-      first_name : "Lee",
-      last_name : "Morgan",
-      title : "Phone Rep",
-      salary : "27,000"
-
-  },
-  {
-      first_name : "Esperanza",
-      last_name : "Spaulding",
-      title : "Phone Team Lead",
-      salary : "32,000"
-
-  },
-  {
-      first_name : "John",
-      last_name : "Coltrane",
-      title : "Call Center Supervisor",
-      salary : "45,000"
-
+  render() {
+    return (
+      <table className="table-style">
+        <thead>
+          <tr className="table-row">
+            <th>
+              <button>First Name</button>
+            </th>
+            <th>
+              <button>Last Name</button>
+            </th>
+            <th>
+              <button>Title</button>
+            </th>
+            <th>
+              <button>Salary</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.state.employees.map(row => (
+            <tr>
+              <td>{row.first_name}</td>
+              <td>{row.last_name}</td>
+              <td>{row.title}</td>
+              <td>{row.salary}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
   }
-]
-
-function App() {
-  return (
-    <Employees employees = {employees}/>
-  );
 }
 
 export default App;
